@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class arithmetic {
@@ -26,7 +27,6 @@ public class arithmetic {
 		int startTime = (int) System.currentTimeMillis();
 		int flex;
 		int correctAns = 0;
-		boolean wrong = true;
 		int loop = 0;
 		while (loop < 30) {
 			loop++;
@@ -69,7 +69,7 @@ public class arithmetic {
 				System.out.println("sqrt of " + flex + "?");
 				correctAns = int1;
 			}
-			while (wrong) {
+			while (true) {
 				String ans = answ.nextLine();
 				if (ans.matches("[0-9]+")) {
 					if (Integer.valueOf(ans) == correctAns) {
