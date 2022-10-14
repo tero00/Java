@@ -1,5 +1,3 @@
-package arithmetic;
-
 import java.util.Scanner;
 
 public class arithmetic {
@@ -7,7 +5,6 @@ public class arithmetic {
 	public static void main(String[] args) {
 		String[] typeArray = {"sum", "sub", "mult", "div", "exp", "root"};
 		System.out.println("Welcome to the practise program for basic arithmetic");
-		
 		System.out.println("How hard do you want the calculations to be? (easy, medium, hard)");
 		Scanner sc = new Scanner(System.in);
 		Scanner answ = new Scanner(System.in);
@@ -25,7 +22,6 @@ public class arithmetic {
 				System.out.println("Easy, medium or hard please");
 			}
 		}
-		
 		System.out.println("Your time starts now");
 		int startTime = (int) System.currentTimeMillis();
 		int flex;
@@ -85,9 +81,7 @@ public class arithmetic {
 				} else {
 					System.out.println("Expected a number, try again");
 				}
-				
 			}
-		
 		}
 		int endTime = (int) System.currentTimeMillis();
 		int spentTime = endTime - startTime;
