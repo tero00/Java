@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class arithmetic {
@@ -11,6 +10,7 @@ public class arithmetic {
 		Scanner answ = new Scanner(System.in);
 		
 		int maxNum = 1;
+		try {
 		while (maxNum == 1) {
 			String diff = sc.nextLine();
 			if (diff.matches("easy")) {
@@ -23,6 +23,10 @@ public class arithmetic {
 				System.out.println("Easy, medium or hard please");
 			}
 		}
+		} catch (Exception e) {
+			System.out.println("Something went wrong.");
+		}
+		
 		System.out.println("Your time starts now");
 		int startTime = (int) System.currentTimeMillis();
 		int flex;
@@ -33,18 +37,19 @@ public class arithmetic {
 			String calctype = typeArray[(int) (Math.random() * 6)];
 			int int1 = (int) (Math.random() * maxNum + 1);
 			int int2 = (int) (Math.random() * maxNum + 1);
+			int num = maxNum / 2;
 			
 			if (calctype == "sum") {
-				flex = (int) (Math.random() * (maxNum / 2) + 1);
+				flex = (int) (Math.random() * num + 1);
 				int1 = int1 * flex;
-				flex = (int) (Math.random() * (maxNum / 2) + 1);
+				flex = (int) (Math.random() * num + 1);
 				int2 = int2 * flex;
 				System.out.println(int1 + " + " + int2 + "?");
 				correctAns = int1 + int2;
 			} else if (calctype == "sub") {
-				flex = (int) (Math.random() * (maxNum / 2) + 1);
+				flex = (int) (Math.random() * num + 1);
 				int1 = int1 * flex;
-				flex = (int) (Math.random() * (maxNum / 2) + 1);
+				flex = (int) (Math.random() * num + 1);
 				int2 = int2 * flex;
 				if (int1 <= int2) {				
 					System.out.println(int2 + " - " + int1 + "?");
@@ -74,6 +79,11 @@ public class arithmetic {
 				if (ans.matches("[0-9]+")) {
 					if (Integer.valueOf(ans) == correctAns) {
 						System.out.println("Correct");
+						try {
+							Thread.sleep(100);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
 						break;
 					} else {
 						System.out.println("Try again");
